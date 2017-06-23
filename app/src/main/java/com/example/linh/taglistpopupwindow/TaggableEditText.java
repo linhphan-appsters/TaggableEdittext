@@ -1,11 +1,11 @@
 package com.example.linh.taglistpopupwindow;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Rect;
 import android.support.v7.widget.AppCompatEditText;
 import android.text.Editable;
 import android.text.Layout;
-import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -14,6 +14,7 @@ import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.ViewGroup;
 
 import io.realm.Realm;
 import io.realm.RealmResults;
@@ -25,9 +26,7 @@ import static android.widget.MultiAutoCompleteTextView.Tokenizer;
  * Created by linh on 20/06/2017.
  */
 
-public class TaggableEditText extends AppCompatEditText implements TextWatcher, RealmTasksAdapter.ItemClickListener {
-    private static final String TAG = "TaggableEditText";
-
+public class TaggableEditText extends AppCompatEditText implements TextWatcher, RealmTagListAdapter.ItemClickListener {
     private int mThreshold = 1;
     private boolean mOpenBefore;
     private int mLastKeyCode = KeyEvent.KEYCODE_UNKNOWN;
@@ -35,8 +34,8 @@ public class TaggableEditText extends AppCompatEditText implements TextWatcher, 
     UserTagListPopUp mPopupWindow;
     private Tokenizer mTokenizer;
     Realm realm;
-    RealmResults<FollowItemModel> items;
 
+    int lastTagPosition;
     public TaggableEditText(Context context) {
         super(context);
         constructor(context, null, 0);
@@ -106,11 +105,10 @@ public class TaggableEditText extends AppCompatEditText implements TextWatcher, 
 //                    return true;
 //            }
 //        }
-
-        if (isPopupShowing() && keyCode == KeyEvent.KEYCODE_TAB && event.hasNoModifiers()) {
-            performCompletion();
-            return true;
-        }
+//        if (isPopupShowing() && keyCode == KeyEvent.KEYCODE_TAB && event.hasNoModifiers()) {
+//            performCompletion(null);
+//            return true;
+//        }
 
         return super.onKeyUp(keyCode, event);
     }
@@ -138,13 +136,12 @@ public class TaggableEditText extends AppCompatEditText implements TextWatcher, 
         mTokenizer = new AtTokenizer();
         realm = Realm.getDefaultInstance();
         createDumpData();
-        setupPopUpWindow();
         setCallback();
     }
 
     private void createDumpData(){
-        items = realm.where(FollowItemModel.class).findAll();
-        if (items.isEmpty()){
+        RealmResults<FollowItemModel> realmResults = realm.where(FollowItemModel.class).findAll();
+        if (realmResults.isEmpty()){
             generateItem();
             Timber.d("realm is empty");
         }
@@ -152,24 +149,25 @@ public class TaggableEditText extends AppCompatEditText implements TextWatcher, 
 
     private void generateItem(){
         realm.executeTransactionAsync(new Realm.Transaction() {
+            StringBuilder username = new StringBuilder();
             @Override
             public void execute(Realm realm) {
                 for (int i =0; i < 10; i++) {
-                    FollowItemModel followItemModel = realm.createObject(FollowItemModel.class);
-                    followItemModel.setDisplayName("name " + i);
-                    followItemModel.setUserId(String.valueOf(i));
-                    followItemModel.setUserName("username" + i);
+                    username.append(String.valueOf(i));
+                    FollowItemModel followItemModel = realm.createObject(FollowItemModel.class, String.valueOf(i));
+                    followItemModel.setDisplayName(username.toString());
+                    followItemModel.setUserName(username.toString());
                     realm.copyToRealm(followItemModel);
                 }
             }
         });
     }
 
-    private void setupPopUpWindow(){
-        mPopupWindow = UserTagListPopUp.newInstance(getContext(), items, new OnClickListener() {
+    private void setupPopUpWindow(RealmResults<FollowItemModel> realmResults){
+        mPopupWindow = UserTagListPopUp.newInstance(getContext(), realmResults, new RealmTagListAdapter.ItemClickListener() {
             @Override
-            public void onClick(View v) {
-                performCompletion();
+            public void onClick(View caller, FollowItemModel tagItem) {
+                performCompletion(tagItem);
             }
         });
     }
@@ -178,41 +176,79 @@ public class TaggableEditText extends AppCompatEditText implements TextWatcher, 
         addTextChangedListener(this);
     }
 
-    private void showDropDown(){
+    private void showDropDown(RealmResults<FollowItemModel> realmResults){
+        if (mPopupWindow == null){
+            setupPopUpWindow(realmResults);
+        }
+
         Layout layout = getLayout();
         int pos = getSelectionStart();
         int line = layout.getLineForOffset(pos);
-        int maxLine = getMaxLines();
-        if (line > maxLine){
-            line = maxLine;
-        }
         int baseline = layout.getLineBaseline(line);
-        int lineTop = layout.getLineTop(line);
-        int lineBottom = layout.getLineBottom(line);
+        int selectedLineTop = layout.getLineTop(line);
+        int selectedLineBottom = layout.getLineBottom(line);
+        int heightOfOneLine = selectedLineBottom - selectedLineTop;
         int bottom = getHeight();
+        if (selectedLineTop > bottom - heightOfOneLine){
+            selectedLineTop = bottom - heightOfOneLine;
+        }
+        if (selectedLineBottom > bottom){
+            selectedLineBottom = bottom;
+        }
 
+        View anchor = this;
+        int[] anchorPositionOnScreen = new int[2];
+        anchor.getLocationOnScreen(anchorPositionOnScreen);
+        int anchorTopOnScreen = anchorPositionOnScreen[1] - dpToPx(24);
+        int y = anchorTopOnScreen + selectedLineBottom;
+        int heightOfScreen = getScreenHeight();
+        boolean popupShouldShowTop = false;
+
+        int maxHeightAvailableAtTop = 0;
+        if (y > heightOfScreen * 0.3){
+            popupShouldShowTop = true;
+            maxHeightAvailableAtTop = anchorTopOnScreen + selectedLineTop - (int)(heightOfOneLine * 0.5);
+        }
         Timber.d("pos %d", pos);
         Timber.d("line %d", line);
         Timber.d("baseline %d", baseline);
-        Timber.d("line top %d", lineTop);
-        Timber.d("line bottom %d", lineBottom);
+        Timber.d("selectedLineTop %d", selectedLineTop);
+        Timber.d("selectedLineBottom %d", selectedLineBottom);
+        Timber.d("maxHeightAvailableAtTop %d", maxHeightAvailableAtTop);
         Timber.d("bottom %d", bottom);
+        Timber.d("y %d", y);
 
-        if (isPopupShowing()) {
-            if (line == maxLine) {
-                mPopupWindow.dismiss();
-                mPopupWindow.showAtLocation(this, Gravity.START | Gravity.TOP, 0, 0);
-            }else{
-                mPopupWindow.update(this, 0, lineBottom - bottom, this.getWidth(), 250);
+//        if (isPopupShowing()) {
+//            if(popupShouldShowTop){
+//                mPopupWindow.setHeight(popupHeightIfShownAtTop);
+//            }else {
+//                mPopupWindow.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
+//            }
+//            mPopupWindow.showAtLocation(anchor, Gravity.CENTER_HORIZONTAL|Gravity.TOP, 0, y);
+//        }else{
+//            if (popupShouldShowTop){
+//                mPopupWindow.setHeight(popupHeightIfShownAtTop);
+//            }else{
+//                mPopupWindow.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
+//            }
+//            mPopupWindow.showAtLocation(anchor, Gravity.CENTER_HORIZONTAL, 0, y);
+//        }
+        if (popupShouldShowTop){
+            int heightOfOneItem = dpToPx(28);
+            int heightOfAllItem = realmResults.size() * heightOfOneItem;
+            int height = heightOfAllItem;
+            if (heightOfAllItem > maxHeightAvailableAtTop){
+                height = maxHeightAvailableAtTop;
             }
-
-        }else{
-            if (line == maxLine){
-                mPopupWindow.showAtLocation(this, Gravity.START | Gravity.TOP, 0, 0);
-            }else {
-                mPopupWindow.showAsDropDown(this, 0, baseline - bottom, Gravity.NO_GRAVITY);
-            }
+            y = maxHeightAvailableAtTop - height + dpToPx(24);
+            mPopupWindow.showAtLocation(anchor, Gravity.CENTER_HORIZONTAL | Gravity.TOP, 0, y);
+            mPopupWindow.update(0, y, ViewGroup.LayoutParams.MATCH_PARENT, height, true);
+        }else {
+            y = selectedLineBottom - bottom;
+            mPopupWindow.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
+            mPopupWindow.showAsDropDown(anchor, 0, y, Gravity.CENTER_HORIZONTAL | Gravity.TOP);
         }
+        mPopupWindow.updateList(realmResults);
     }
 
     /**
@@ -279,7 +315,7 @@ public class TaggableEditText extends AppCompatEditText implements TextWatcher, 
             // drop down is automatically dismissed when enough characters
             // are deleted from the text view
             if (isPopupShowing()){
-                mPopupWindow.dismiss();
+                dismissDropDown();
             }
         }
     }
@@ -306,8 +342,8 @@ public class TaggableEditText extends AppCompatEditText implements TextWatcher, 
         }
     }
 
-    private void performCompletion() {
-        replaceText("linh");
+    private void performCompletion(FollowItemModel tagItem) {
+        replaceText(tagItem.getUserName());
         dismissDropDown();
     }
 
@@ -335,6 +371,7 @@ public class TaggableEditText extends AppCompatEditText implements TextWatcher, 
 
         QwertyKeyListener.markAsReplaced(editable, start, end, original);
         editable.replace(start, end, mTokenizer.terminateToken(text));
+        lastTagPosition = start;
     }
 
     /**
@@ -367,7 +404,14 @@ public class TaggableEditText extends AppCompatEditText implements TextWatcher, 
      * instance a smaller substring of <code>text</code>.</p>
      */
     protected void performFiltering(CharSequence text, int start, int end, int keyCode) {
-        showDropDown();
+        String query = text.subSequence(start, end).toString();
+        RealmResults<FollowItemModel> realmResults = realm.where(FollowItemModel.class).contains("UserName", query).findAll();
+        Timber.d("query result %d", realmResults.size());
+        if (realmResults.isEmpty()){
+            dismissDropDown();
+        }else {
+            showDropDown(realmResults);
+        }
     }
 
     /**
@@ -379,7 +423,9 @@ public class TaggableEditText extends AppCompatEditText implements TextWatcher, 
      */
     public boolean enoughToFilter() {
         Editable text = getText();
-
+        if (text.length() <= 0){
+            return false;
+        }
         int end = getSelectionEnd();
         if (end < 0 || mTokenizer == null) {
             return false;
@@ -408,7 +454,7 @@ public class TaggableEditText extends AppCompatEditText implements TextWatcher, 
         final boolean enoughToFilter = enoughToFilter();
         if ((count > 0) && enoughToFilter) {
             if (hasFocus() && hasWindowFocus()) {
-                showDropDown();
+//                showDropDown(realmResults);
             }
         } else if (isPopupShowing()) {
             dismissDropDown();
@@ -425,15 +471,26 @@ public class TaggableEditText extends AppCompatEditText implements TextWatcher, 
      * @return true if the popup menu is showing, false otherwise
      */
     public boolean isPopupShowing() {
-        Timber.d("is popup showing %s", String.valueOf(mPopupWindow.isShowing()));
-        return mPopupWindow.isShowing();
+        boolean result = mPopupWindow != null && mPopupWindow.isShowing();
+        Timber.d("is popup showing %s", String.valueOf(result));
+        return result;
     }
 
     /**
      * <p>Closes the drop down if present on screen.</p>
      */
     public void dismissDropDown() {
-        mPopupWindow.dismiss();
+        if (mPopupWindow != null) {
+            mPopupWindow.dismiss();
+        }
+    }
+
+    public static int getScreenHeight() {
+        return Resources.getSystem().getDisplayMetrics().heightPixels;
+    }
+
+    public static int dpToPx(float dp) {
+        return (int) (dp * Resources.getSystem().getDisplayMetrics().density);
     }
 
     private class AtTokenizer implements Tokenizer {
@@ -488,7 +545,7 @@ public class TaggableEditText extends AppCompatEditText implements TextWatcher, 
 //                    return text + " ";
 //                }
                 SpannableString sp = new SpannableString(text + " ");
-                sp.setSpan(new android.text.style.StyleSpan(android.graphics.Typeface.BOLD), 0, text.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                sp.setSpan(new android.text.style.StyleSpan(android.graphics.Typeface.BOLD), 0, text.length(), 0);
                 return sp;
             }
         }

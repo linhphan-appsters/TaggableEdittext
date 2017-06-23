@@ -31,6 +31,9 @@ dependencies {
     compile 'com.jakewharton.timber:timber:4.5.1'
     compile 'com.jakewharton:butterknife:8.6.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
-    compile 'com.github.thorbenprimke:realm-recyclerview:0.9.25'
     compile 'com.google.code.gson:gson:2.8.0'
+
+    compile project(':library')
+//    compile 'com.github.thorbenprimke:realm-recyclerview:0.9.25'
+//    compile 'com.github.thorbenprimke:realm-nytimes-data:0.9.7'
 }

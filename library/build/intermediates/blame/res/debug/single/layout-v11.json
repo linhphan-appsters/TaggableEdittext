@@ -1,0 +1,50 @@
+[
+    {
+        "merged": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/res/merged/debug/layout-v11/notification_media_action.xml",
+        "source": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.2.0/res/layout-v11/notification_media_action.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/TagListPopupWindow/library/build/intermediates/res/merged/debug/layout-v11/notification_media_action.xml",
+        "source": "/home/linh/.android/build-cache/7d4b4995e9037304706a52652fd8f4d91c9bfcbe/output/res/layout-v11/notification_media_action.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/TagListPopupWindow/library/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow_custom.xml",
+        "source": "/home/linh/.android/build-cache/7d4b4995e9037304706a52652fd8f4d91c9bfcbe/output/res/layout-v11/notification_template_big_media_narrow_custom.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/res/merged/debug/layout-v11/notification_media_cancel_action.xml",
+        "source": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.2.0/res/layout-v11/notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow.xml",
+        "source": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.2.0/res/layout-v11/notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/TagListPopupWindow/library/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_custom.xml",
+        "source": "/home/linh/.android/build-cache/7d4b4995e9037304706a52652fd8f4d91c9bfcbe/output/res/layout-v11/notification_template_big_media_custom.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media.xml",
+        "source": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.2.0/res/layout-v11/notification_template_big_media.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_custom.xml",
+        "source": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.2.0/res/layout-v11/notification_template_big_media_custom.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow_custom.xml",
+        "source": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.2.0/res/layout-v11/notification_template_big_media_narrow_custom.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/TagListPopupWindow/library/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media.xml",
+        "source": "/home/linh/.android/build-cache/7d4b4995e9037304706a52652fd8f4d91c9bfcbe/output/res/layout-v11/notification_template_big_media.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/TagListPopupWindow/library/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow.xml",
+        "source": "/home/linh/.android/build-cache/7d4b4995e9037304706a52652fd8f4d91c9bfcbe/output/res/layout-v11/notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/TagListPopupWindow/library/build/intermediates/res/merged/debug/layout-v11/notification_media_cancel_action.xml",
+        "source": "/home/linh/.android/build-cache/7d4b4995e9037304706a52652fd8f4d91c9bfcbe/output/res/layout-v11/notification_media_cancel_action.xml"
+    }
+]

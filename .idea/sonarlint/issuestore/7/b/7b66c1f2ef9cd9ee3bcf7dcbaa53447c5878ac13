@@ -1,0 +1,7 @@
+
+Dsquid:S1185"(Remove this method to simply inherit it.(°¹‰‰8±ëßÇÌ+
+Osquid:S1172".Remove this unused method parameter "context".(ˆÕ†ºıÿÿÿÿ8Ïæç¢Ì+
+]squid:S1126"AReplace this if-then-else statement by a single return statement.(ÁãÌ’8šğ÷¢Ì+
+bsquid:S1226"FIntroduce a new variable instead of reusing the parameter "threshold".(ñ¡Î–8¡Í£Ì+
+œsquid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(šóİ:8†¼ù«Ì+
+¢squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ê¥¾àûÿÿÿÿ8²íÆ£Ì+

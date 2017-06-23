@@ -1,0 +1,66 @@
+[
+    {
+        "merged": "/home/linh/Downloads/TagListPopupWindow/library/build/intermediates/res/merged/release/drawable-v21/avd_show_password.xml",
+        "source": "/home/linh/.android/build-cache/bf802bf2f303b64474120c24ce321431656f569a/output/res/drawable-v21/avd_show_password.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/res/merged/release/drawable-v21/avd_show_password.xml",
+        "source": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/exploded-aar/com.android.support/design/25.2.0/res/drawable-v21/avd_show_password.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/res/merged/release/drawable-v21/design_bottom_navigation_item_background.xml",
+        "source": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/exploded-aar/com.android.support/design/25.2.0/res/drawable-v21/design_bottom_navigation_item_background.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/res/merged/release/drawable-v21/abc_action_bar_item_background_material.xml",
+        "source": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.2.0/res/drawable-v21/abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/TagListPopupWindow/library/build/intermediates/res/merged/release/drawable-v21/abc_btn_colored_material.xml",
+        "source": "/home/linh/.android/build-cache/7d4b4995e9037304706a52652fd8f4d91c9bfcbe/output/res/drawable-v21/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/TagListPopupWindow/library/build/intermediates/res/merged/release/drawable-v21/abc_edit_text_material.xml",
+        "source": "/home/linh/.android/build-cache/7d4b4995e9037304706a52652fd8f4d91c9bfcbe/output/res/drawable-v21/abc_edit_text_material.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/TagListPopupWindow/library/build/intermediates/res/merged/release/drawable-v21/avd_hide_password.xml",
+        "source": "/home/linh/.android/build-cache/bf802bf2f303b64474120c24ce321431656f569a/output/res/drawable-v21/avd_hide_password.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/res/merged/release/drawable-v21/design_password_eye.xml",
+        "source": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/exploded-aar/com.android.support/design/25.2.0/res/drawable-v21/design_password_eye.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/TagListPopupWindow/library/build/intermediates/res/merged/release/drawable-v21/notification_action_background.xml",
+        "source": "/home/linh/.android/build-cache/7d4b4995e9037304706a52652fd8f4d91c9bfcbe/output/res/drawable-v21/notification_action_background.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/TagListPopupWindow/library/build/intermediates/res/merged/release/drawable-v21/abc_action_bar_item_background_material.xml",
+        "source": "/home/linh/.android/build-cache/7d4b4995e9037304706a52652fd8f4d91c9bfcbe/output/res/drawable-v21/abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/TagListPopupWindow/library/build/intermediates/res/merged/release/drawable-v21/design_bottom_navigation_item_background.xml",
+        "source": "/home/linh/.android/build-cache/bf802bf2f303b64474120c24ce321431656f569a/output/res/drawable-v21/design_bottom_navigation_item_background.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/res/merged/release/drawable-v21/notification_action_background.xml",
+        "source": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.2.0/res/drawable-v21/notification_action_background.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/res/merged/release/drawable-v21/abc_btn_colored_material.xml",
+        "source": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.2.0/res/drawable-v21/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/TagListPopupWindow/library/build/intermediates/res/merged/release/drawable-v21/design_password_eye.xml",
+        "source": "/home/linh/.android/build-cache/bf802bf2f303b64474120c24ce321431656f569a/output/res/drawable-v21/design_password_eye.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/res/merged/release/drawable-v21/avd_hide_password.xml",
+        "source": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/exploded-aar/com.android.support/design/25.2.0/res/drawable-v21/avd_hide_password.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/res/merged/release/drawable-v21/abc_edit_text_material.xml",
+        "source": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.2.0/res/drawable-v21/abc_edit_text_material.xml"
+    }
+]

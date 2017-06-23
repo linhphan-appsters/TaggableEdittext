@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/res/merged/androidTest/debug/drawable-anydpi-v21/design_ic_visibility_off.xml",
+        "source": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/exploded-aar/com.android.support/design/25.2.0/res/drawable-anydpi-v21/design_ic_visibility_off.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/res/merged/androidTest/debug/drawable-anydpi-v21/design_ic_visibility.xml",
+        "source": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/exploded-aar/com.android.support/design/25.2.0/res/drawable-anydpi-v21/design_ic_visibility.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/TagListPopupWindow/library/build/intermediates/res/merged/androidTest/debug/drawable-anydpi-v21/design_ic_visibility.xml",
+        "source": "/home/linh/.android/build-cache/bf802bf2f303b64474120c24ce321431656f569a/output/res/drawable-anydpi-v21/design_ic_visibility.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/TagListPopupWindow/library/build/intermediates/res/merged/androidTest/debug/drawable-anydpi-v21/design_ic_visibility_off.xml",
+        "source": "/home/linh/.android/build-cache/bf802bf2f303b64474120c24ce321431656f569a/output/res/drawable-anydpi-v21/design_ic_visibility_off.xml"
+    }
+]

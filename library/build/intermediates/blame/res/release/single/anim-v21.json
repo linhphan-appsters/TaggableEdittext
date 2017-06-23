@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/res/merged/release/anim-v21/design_bottom_sheet_slide_out.xml",
+        "source": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/exploded-aar/com.android.support/design/25.2.0/res/anim-v21/design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/res/merged/release/anim-v21/design_bottom_sheet_slide_in.xml",
+        "source": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/exploded-aar/com.android.support/design/25.2.0/res/anim-v21/design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/TagListPopupWindow/library/build/intermediates/res/merged/release/anim-v21/design_bottom_sheet_slide_out.xml",
+        "source": "/home/linh/.android/build-cache/bf802bf2f303b64474120c24ce321431656f569a/output/res/anim-v21/design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/TagListPopupWindow/library/build/intermediates/res/merged/release/anim-v21/design_bottom_sheet_slide_in.xml",
+        "source": "/home/linh/.android/build-cache/bf802bf2f303b64474120c24ce321431656f569a/output/res/anim-v21/design_bottom_sheet_slide_in.xml"
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/res/merged/release/color-v11/abc_background_cache_hint_selector_material_light.xml",
+        "source": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.2.0/res/color-v11/abc_background_cache_hint_selector_material_light.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/TagListPopupWindow/library/build/intermediates/res/merged/release/color-v11/abc_background_cache_hint_selector_material_dark.xml",
+        "source": "/home/linh/.android/build-cache/7d4b4995e9037304706a52652fd8f4d91c9bfcbe/output/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/res/merged/release/color-v11/abc_background_cache_hint_selector_material_dark.xml",
+        "source": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.2.0/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/TagListPopupWindow/library/build/intermediates/res/merged/release/color-v11/abc_background_cache_hint_selector_material_light.xml",
+        "source": "/home/linh/.android/build-cache/7d4b4995e9037304706a52652fd8f4d91c9bfcbe/output/res/color-v11/abc_background_cache_hint_selector_material_light.xml"
+    }
+]

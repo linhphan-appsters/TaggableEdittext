@@ -15,6 +15,6 @@
         android:hint="Hello World!"
         android:background="#a0a0ec"
         android:minLines="3"
-        android:maxLines="5"/>
+        android:maxLines="8"/>
 
 </LinearLayout>

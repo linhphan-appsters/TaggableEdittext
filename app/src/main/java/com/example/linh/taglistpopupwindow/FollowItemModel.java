@@ -3,11 +3,13 @@ package com.example.linh.taglistpopupwindow;
 import com.google.gson.annotations.SerializedName;
 
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
 /**
  * Created by User on 9/28/2015.
  */
 public class FollowItemModel extends RealmObject{
+    @PrimaryKey
     @SerializedName("UserId")private String UserId;
     @SerializedName("DisplayName")private String DisplayName;
     @SerializedName("UserImage")private String UserImage;

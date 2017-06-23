@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "/home/linh/Downloads/TagListPopupWindow/library/build/intermediates/res/merged/release/layout-v21/notification_action_tombstone.xml",
+        "source": "/home/linh/.android/build-cache/7d4b4995e9037304706a52652fd8f4d91c9bfcbe/output/res/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/res/merged/release/layout-v21/notification_action_tombstone.xml",
+        "source": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.2.0/res/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/res/merged/release/layout-v21/notification_template_custom_big.xml",
+        "source": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.2.0/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/TagListPopupWindow/library/build/intermediates/res/merged/release/layout-v21/notification_template_custom_big.xml",
+        "source": "/home/linh/.android/build-cache/7d4b4995e9037304706a52652fd8f4d91c9bfcbe/output/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/res/merged/release/layout-v21/notification_template_icon_group.xml",
+        "source": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.2.0/res/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/TagListPopupWindow/library/build/intermediates/res/merged/release/layout-v21/notification_template_icon_group.xml",
+        "source": "/home/linh/.android/build-cache/7d4b4995e9037304706a52652fd8f4d91c9bfcbe/output/res/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/res/merged/release/layout-v21/notification_action.xml",
+        "source": "/home/linh/Downloads/realm-recyclerview/library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.2.0/res/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "/home/linh/Downloads/TagListPopupWindow/library/build/intermediates/res/merged/release/layout-v21/notification_action.xml",
+        "source": "/home/linh/.android/build-cache/7d4b4995e9037304706a52652fd8f4d91c9bfcbe/output/res/layout-v21/notification_action.xml"
+    }
+]
